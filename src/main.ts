@@ -1,5 +1,5 @@
 async function run(): Promise<void> {
-  console.log('Hello, world.')
+  console.log('Hello, world!')
 }
 
 run()
