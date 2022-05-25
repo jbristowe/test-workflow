@@ -28,7 +28,7 @@
     "typescript": "^4.7.2"
   },
   "scripts": {
-    "build": "npx @vercel/ncc build",
+    "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
