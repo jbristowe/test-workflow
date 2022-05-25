@@ -5,7 +5,7 @@ on:
       - 'README.md'
 name: release-please
 env:
-  ACTION_NAME: install-octopus-cli-action
+  ACTION_NAME: test-action
 jobs:
   build:
     runs-on: ubuntu-latest
