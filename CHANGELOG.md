@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://github.com/jbristowe/test-workflow/compare/v0.1.0...v0.1.1) (2022-05-25)
+
+
+### Bug Fixes
+
+* new function ([dbfa4c3](https://github.com/jbristowe/test-workflow/commit/dbfa4c3410ae8309b847b4e954b55acd5d0b06f7))
+
 ## 0.1.0 (2022-05-25)
 
 
