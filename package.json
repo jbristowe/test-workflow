@@ -28,12 +28,12 @@
     "typescript": "^4.7.2"
   },
   "scripts": {
-    "all": "npm run format && npm run build && npm test",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test",
     "build": "tsc",
     "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "prebuild": "eslint src/**/*.ts",
-    "postbuild": "ncc build -o dist",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
     "test": "jest"
   },
   "repository": {
@@ -42,7 +42,8 @@
   },
   "author": "",
   "license": "Apache-2.0",
-  "main": "out/index.js",
+  "main": "lib/main.js",
+  "private": true,
   "bugs": {
     "url": "https://github.com/jbristowe/test-workflow/issues"
   },
