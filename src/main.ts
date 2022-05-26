@@ -1,9 +1,7 @@
-async function run(): Promise<void> {
-  console.log(hello())
-}
+import {Hello} from './hello'
 
-function hello(): string {
-  return 'Hello'
+async function run(): Promise<void> {
+  console.log(Hello())
 }
 
 run()
