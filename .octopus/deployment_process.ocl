@@ -40,3 +40,29 @@ step "hello-world-using-bash" {
         }
     }
 }
+
+step "upload-package-contents-to-s3-public-with-hashes" {
+    name = "Upload package contents to S3 public with hashes"
+
+    action {
+        properties = {
+            Octopus.Action.Template.Id = "ActionTemplates-661"
+            Octopus.Action.Template.Version = "2"
+            PackageToUpload = "{\"PackageId\":\"Foo\",\"FeedId\":\"octopus-server-built-in\"}"
+            S3BucketPath = "#{AwsBucket}/octopus-tools/#{Octopus.Action.Package[PackageToUpload].PackageVersion}/"
+        }
+        worker_pool_variable = ""
+
+        packages "PackageToUpload" {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "Foo"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "PackageToUpload"
+                Purpose = ""
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
