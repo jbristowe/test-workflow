@@ -40,28 +40,3 @@ step "hello-world-using-bash" {
         }
     }
 }
-
-step "upload-octopustools-to-s3-public-with-hashes" {
-    name = "Upload OctopusTools to S3 public with hashes"
-
-    action {
-        properties = {
-            Octopus.Action.Template.Id = "ActionTemplates-864"
-            Octopus.Action.Template.Version = "4"
-            PackageToUpload = "{\"PackageId\":\"OctopusTools.Zips\",\"FeedId\":\"octopus-server-built-in\"}"
-            S3BucketPath = "#{AwsBucket}/octopus-tools/#{Octopus.Action.Package[PackageToUpload].PackageVersion}/"
-        }
-        worker_pool = "hosted-windows-2019"
-
-        packages "PackageToUpload" {
-            acquisition_location = "Server"
-            feed = "octopus-server-built-in"
-            package_id = "OctopusTools.Zips"
-            properties = {
-                Extract = "True"
-                PackageParameterName = "PackageToUpload"
-                SelectionMode = "deferred"
-            }
-        }
-    }
-}
