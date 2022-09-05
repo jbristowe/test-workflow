@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/jbristowe/test-workflow/compare/v1.0.0...v1.0.1) (2022-09-05)
+
+
+### Bug Fixes
+
+* updated workflow ([0392d35](https://github.com/jbristowe/test-workflow/commit/0392d3521635b74ce1a15eab24416f971d7ce95d))
+
 ## [1.0.0](https://github.com/jbristowe/test-workflow/compare/v0.1.2...v1.0.0) (2022-05-26)
 
 
